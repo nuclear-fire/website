@@ -1,0 +1,177 @@
+::selection {
+    background-color: mediumpurple;
+    color: orange;
+  }
+/* Reset some default styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    background-color: black;
+    overflow-x: hidden;
+}
+
+/* Style the header and navigation */
+header {
+    padding: 10px 0;
+}
+
+nav {
+    text-align: center;
+}
+
+.menu {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu a:hover{
+    color: white;
+}
+
+.menu li {
+    display: inline-block;
+    margin: 0 20px;
+    position: relative; /* Add relative positioning to the list items */
+}
+
+/* Style the links */
+.menu a {
+    text-decoration: none;
+    color: grey;
+    font-weight: bold;
+    font-size: 16px;
+    transition-duration: 0.4s;
+}
+
+/* Create the underline effect on hover */
+.menu a::before {
+    content: "";
+    position: absolute;
+    width: 0; /* Start with a width of 0 */
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    transition: width 0.3s ease; /* Animate the width */
+}
+
+.menu li:hover a::before {
+    width: 100%; /* Expand the width to 100% on hover */
+}
+
+/* used for the current page effect*/
+
+.menu li:hover a::before,
+.menu li a.active::before {
+    width: 100%; /* Expand the width to 100% on hover and for the active page */
+}
+
+.menu li a.active {
+    color: white; /* Set the text color to white for the active page */
+}
+
+.menu li a.active::before {
+    left: 0; /* Reset the left position for the active page */
+}
+
+#blob {
+    background-color: white;
+    height: 34vmax;
+    aspect-ratio: 1;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    border-radius: 50%;
+    background: linear-gradient(to right, orange, mediumpurple);
+    animation: rotate 20s infinite;
+    opacity: 0.8;
+    z-index: -2;
+}
+
+#blur {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(12vmax);
+    z-index: -1; /* Adjust the z-index to ensure it's on top of other content */
+}
+@media (max-width: 768px) {
+    #blob{
+        display: none;
+    }
+    #blur{
+        display: none;
+    }
+}
+
+/* Loading overlay */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 1;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Hide the loading overlay with a fade-out effect */
+  .loading-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+    /* Footer styles */
+.footer {
+    background-color: white;
+    color: black;
+    padding: 5px 0;
+    text-align: center;
+}
+
+/* Container for columns */
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Column styles */
+.footer-column {
+    flex-basis: calc(33.33% - 20px); /* Adjust column width for mobile */
+    margin-right: 20px;
+}
+
+/* Style for lists */
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .footer-column {
+        flex-basis: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}

@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name Here</title>
+    <link rel="icon" href="">
+    <link rel="stylesheet" href="globalStyles.css">
+    <style>
+
+        .title{
+            color: white;
+            font-size: 60px;
+            text-align: center;
+            margin: 25px;
+        }
+        .bodyText{
+            color: white;
+            font-size: 20px;
+            text-align: center;
+            margin: 25px;
+            display: block;
+
+        }
+        .bodyTextUnderlined{
+            color: white;
+            font-size: 20px;
+            text-align: center;
+            margin: 25px;
+            display: block;
+            text-decoration: underline;
+        }
+        .uiSeperator{
+            margin-top: 100px;
+            margin-bottom: 50px;
+            height: 2px;
+            width: 80%;
+            background: linear-gradient(to left, orange, mediumpurple);;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+        a {
+        text-decoration: none;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            margin-top: -71px;
+            z-index: -1;
+            position: relative;
+        }
+
+        .square {
+            background-size: cover;
+            background-image: url("./fire.jpg");
+            margin: auto;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .squareFrame{
+            height: 100%;
+            width: 100%;
+        }
+
+        .fade-in-text {
+            opacity: 0;
+            transition: opacity 2s;
+
+        }
+
+        /* Style when the text should fade in */
+        .fade-in {
+            opacity: 1;
+        }
+
+        
+        .fade-in-text-fromleft{
+            opacity: 0;
+            transition: opacity 3s;
+            transform: translateX(100%);
+            filter: blur(5px);
+
+        }
+
+        @media screen and (max-width: 767px) {
+            .fade-in-text-fromleft {
+                transform: translateX(0%);
+
+            }
+        }
+
+
+
+
+        /* Style when the text should fade in */
+        .fade-in-fromleft{
+            opacity: 1;
+            filter: blur(0px);
+            transform: translateX(0%);
+            transition: 1s;
+        }
+
+        .fade-in-text-fromright{
+            opacity: 0;
+            transition: opacity 3s;
+            transform: translateX(-100%);
+            filter: blur(5px);
+
+        }
+
+        /* Style when the text should fade in */
+        .fade-in-fromright{
+            opacity: 1;
+            filter: blur(0px);
+            transform: translateX(0%);
+            transition: 1s;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* flex-wrap: wrap; /* This allows items to wrap to the next row */
+            margin-bottom: 20px;
+        }
+        
+
+        .card {
+            width: 200px;
+            height: 200px;
+            margin: 10px -60px; /* Add margin to create spacing between stacked items */
+            background-size: contain;
+            transform-origin: center;
+            transition:  0.5s ;
+            box-shadow: 5px 20px 20px rgba(0, 0, 0, 0.5); /* Box shadow for the card */
+            transition-duration: 0.5s;
+            transform: perspective(800px) rotateY(50deg); /* Initial fold */
+            padding: 20px;
+            border: 2px solid transparent; /* Make the border transparent */
+            border-image: linear-gradient(to top right, purple, aquamarine); /* Define the gradient for the border */
+            border-image-slice: 1; /* Slice the border image evenly */
+        }
+
+        .card:hover {
+            transform: rotateY(0deg); /* Flat when hovered */
+            box-shadow: 2.5px 10px 10px rgba(0, 0, 0, 0.5);   
+            margin: 10px 30px;     
+        }
+
+        @media screen and (max-width: 767px) {
+            .card {
+                width: 100px;
+                height: 100px; /* Change width and height for mobile */
+            }
+        }
+
+        .card-with-text{
+            width: 500px;
+            height: 200px;
+            background-color: rgb(26, 26, 26);
+            border: 1px solid white;
+            margin: 0px 40px; /* Add margin to create spacing between stacked items */
+            transform-origin: center;
+            transition:  0.5s ;
+            box-shadow: 5px 20px 20px rgba(0, 0, 0, 0.5); /* Box shadow for the card */
+            transition-duration: 0.5s;
+            border-radius: 20px;
+            padding: 20px;
+            font-size: 20px;
+        }
+
+        .compareContainer{
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        .insidecomparecontainer{
+            margin: 60px 20px;
+            text-align: center;
+        }
+        .websiteexamples{
+            height: 384px;
+            width: 512px;
+            margin: 20px;
+        }
+        #cards2 {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        margin-bottom: 100px;
+        padding: 0px;
+        }
+
+        .card2 {
+        border: 1px solid white;
+        border-radius: 40px;
+        display: block;
+        background-position: center;
+        position: relative;
+        cursor: pointer;
+        outline: none;
+        transition: scale 100ms;
+        }
+
+        .card2:hover + .body {
+            background-color: white;
+        }
+        
+        .card2 .card-front-image {
+        position: relative;
+        z-index: 2;
+        }
+
+        .card2 .card-image {
+        background-size: contain;
+        display: block;
+        width: clamp(300px, 20vw, 500px);
+        aspect-ratio: 2 / 3;
+        border-radius: 40px
+        }
+        .card2:hover{
+            border: 1px solid aqua;
+
+        }
+        @media(max-width: 1200px) {
+        body {    
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+        
+        #cards2 {
+            flex-direction: column; 
+            align-items: center;
+            gap: 4rem;
+        }
+        
+        .card2 .card-image {
+            width: 400px;    
+        }
+        }
+
+        @media(max-width: 600px) {
+        #cards2 {
+            gap: 2rem;
+        }
+        
+        .card2 {
+            width: 80%;    
+        }
+        
+        .card2 .card-image {
+            width: 100%;    
+        }
+        }
+
+        .PriceDisplayTop{
+            color: white;
+            text-decoration: underline;
+            font-size: 30px;
+            line-height: 40px;
+            margin: 0px;
+            width: 100%;
+            height: 10%;
+            text-align: center;
+        }
+        .PriceDisplayContent{
+            line-height: 40px;
+            margin: 0px;
+            width: 100%;
+            height: 80%;
+            text-align: center;
+        }
+        .PriceDisplayContentText{
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .PriceDisplayBottom{
+            color: white;
+            text-decoration: none;
+            font-size: 30px;
+            line-height: 40px;
+            margin: 0px;
+            width: 100%;
+            height: 10%;
+            text-align: center;
+            margin-bottom: 0;
+            margin-top: 0px;
+        }
+
+        .FAQContainer{
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+        .FAQ{
+            font-size: 25px;
+            line-height: 80px;
+            height: 80px;
+            width: 80%;
+            border: 1px solid white;
+            box-sizing: border-box;
+            color: white;
+            background-color: rgba(27, 27, 27, 0.5);
+        }
+        .FAQ:hover{
+            color: orange;
+            background-color: rgba(80, 0, 178, 0.2);
+        }
+        .FAQ:nth-child(1){
+            transition-duration: 1200ms;
+        }
+        .FAQ:nth-child(2){
+            transition-duration: 1200ms;
+        }
+        .FAQ:nth-child(3){
+            transition-duration: 1200ms;
+        }
+        .FAQ:nth-child(4){
+            transition-duration: 1200ms;
+        }
+        .FAQ:nth-child(5){
+            transition-duration: 1200ms;
+        }
+        .FAQ:nth-child(6){
+            transition-duration: 1200ms;
+        }
+        .FAQ:nth-child(7){
+            transition-duration: 1200ms;
+        }
+        .FAQ:nth-child(8){
+            transition-duration: 1200ms;
+        }
+        .FAQ:nth-child(9){
+            transition-duration: 1200ms;
+        }
+        .fade-in-text-forFAQ{
+            opacity: 0;
+            transform: translateX(-100%);
+        }
+        .fade-in-forFAQ{
+            opacity: 1;
+            transform: translateX(0%);
+        }
+
+
+        /* Style the accordion panel. Note: hidden by default */
+        .panel {
+            
+            text-align: left;
+            color: white;
+            background-color: rgba(27, 27, 27, 0.5);
+            border: 0px solid grey;
+            border-left: 1px solid grey;
+            border-right: 1px solid grey;
+            width: calc(60% - 1px);
+            display: block;
+          padding: 0 10%;
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.2s ease-out;
+        }
+
+
+    </style>
+</head>
+<body style="overflow-x: hidden;">
+    
+    <header>
+        <nav>
+            <ul class="menu">
+                <li><a href="" class="active">Home</a></li>
+                <li><a href=" ">Software</a></li>
+                <li><a href=" ">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+      
+<div id="blob"></div>
+<div id="blur"></div>
+
+    <div class="container">
+        <div class="square" id="foldableSquare">
+            <div class="squareFrame"></div>
+        </div>
+    </div>
+
+    <div class="fade-in-text title">
+        <p>Nuclear Flame</p>
+    </div>
+    
+  
+    <div class="uiSeperator"></div>
+    <div class="title fade-in-text-fromright">Our Mission</div>
+    <div class="bodyText fade-in-text-fromleft">From Harnessing Fire to Unlocking the Power of Nuclear Energy, Innovation has Always Been Humannity's Guiding Light. Our Mission is to Illuminate the Future by Pioneering Technological Advancements.</div>
+  
+
+    <div class="uiSeperator"></div>
+
+    <div class="title">Our Products</div>
+    <div class="FAQContainer">
+        <a href="" class="FAQ fade-in-text-forFAQ">Delete Item Chrome Plugin</a>
+        <a href="" class="FAQ fade-in-text-forFAQ">Fancy Scroll Bar Chrome Plugin</a>
+        <a href="" class="FAQ fade-in-text-forFAQ">News Website</a>
+        <a href="" class="FAQ fade-in-text-forFAQ">Temporary Email Plugin</a>
+    </div>
+
+    <div class="uiSeperator"></div>
+
+    <div class="title fade-in-text-fromright">Contact Us</div>
+    <div class="bodyText fade-in-text-fromleft">If you have any questions, feel free to send us an email at: hello@nuclearflame.com</div>
+
+
+    <br/><br/><br/><br/>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Webpages</h3>
+                <ul>
+                    <li><a href=" ">Home</a></li>
+                    <li><a href=" ">Pricing</a></li>
+                    <li><a href=" ">About</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Terms and Policies</h3>
+                <ul>
+                    <li><a href=" ">Privacy Policy</a></li>
+                    <li><a href=" ">Terms of Service</a></li>
+                    <li><a href=" ">Cookie Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Social Media</h3>
+                <ul>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">GitHub</a></li>
+                    <li><a href="#">Youtube</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script>
+        
+        /* -- Glow effect -- */
+
+        const blob = document.getElementById("blob");
+
+        window.onpointermove = event => { 
+        const { clientX, clientY } = event;
+        
+        blob.animate({
+            left: `${clientX}px`,
+            top: `${Math.min(clientY + window.scrollY, document.documentElement.scrollHeight+150 - blob.clientHeight)}px`
+        }, { duration: 3000, fill: "forwards" });
+        }
+        
+        //for foldable square
+        const square = document.getElementById("foldableSquare");
+
+        window.addEventListener("scroll", () => {
+            // Calculate the fold angle based on the scroll position
+            const scrollValue = window.scrollY;
+            const foldAngle = Math.max((-scrollValue / 8), -45); // Limit fold angle to a maximum of 5 degrees
+
+            // Apply the folding effect using CSS transform
+            square.style.transform = `perspective(1000px) rotateX(${foldAngle}deg)`;
+        });
+
+        //for fade in text
+        document.addEventListener("DOMContentLoaded", function () {
+            const textElement = document.querySelector(".fade-in-text");
+
+            // Create an Intersection Observer
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        textElement.classList.add("fade-in");
+                    } else if (entry.intersectionRatio > 0) {
+                        textElement.classList.add("fade-in");
+                    } else {
+                        textElement.classList.remove("fade-in");
+                    }
+                });
+            });
+
+            // Observe the text element
+            observer.observe(textElement);
+        });
+
+        //for fade in text left
+        document.addEventListener("DOMContentLoaded", function () {
+            // Select all elements with the class "fade-in-text-fromleft"
+            const textElements = document.querySelectorAll(".fade-in-text-fromleft");
+
+            // Create an Intersection Observer for each element
+            textElements.forEach((textElement) => {
+                const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                    textElement.classList.add("fade-in-fromleft");
+                    } else if (entry.intersectionRatio > 0) {
+                    // Element is partially in viewport, you can choose to add the class here
+                    textElement.classList.add("fade-in-fromleft");
+                    } else {
+                    // Element is not in viewport, remove the class to reset the animation
+                    textElement.classList.remove("fade-in-fromleft");
+                    }
+                });
+                });
+
+                // Observe each text element
+                observer.observe(textElement);
+            });
+        });
+
+        //for fade in text right
+        document.addEventListener("DOMContentLoaded", function () {
+            // Select all elements with the class "fade-in-text-fromleft"
+            const textElements2 = document.querySelectorAll(".fade-in-text-fromright");
+
+            // Create an Intersection Observer for each element
+            textElements2.forEach((textElement) => {
+                const observer2 = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                    textElement.classList.add("fade-in-fromright");
+                    } else if (entry.intersectionRatio > 0) {
+                    // Element is partially in viewport, you can choose to add the class here
+                    textElement.classList.add("fade-in-fromright");
+                    } else {
+                    // Element is not in viewport, remove the class to reset the animation
+                    textElement.classList.remove("fade-in-fromright");
+                    }
+                });
+                });
+
+                // Observe each text element
+                observer2.observe(textElement);
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            // Select all elements with the class "fade-in-text-fromleft"
+            const textElements2 = document.querySelectorAll(".fade-in-text-forFAQ");
+
+            // Create an Intersection Observer for each element
+            textElements2.forEach((textElement) => {
+                const observer2 = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                    textElement.classList.add("fade-in-forFAQ");
+                    } else if (entry.intersectionRatio > 0) {
+                    // Element is partially in viewport, you can choose to add the class here
+                    textElement.classList.add("fade-in-forFAQ");
+                    } else {
+                    // Element is not in viewport, remove the class to reset the animation
+                    textElement.classList.remove("fade-in-forFAQ");
+                    }
+                });
+                });
+
+                // Observe each text element
+                observer2.observe(textElement);
+            });
+        });
+
+
+        //dorpdown for FAQ
+        var acc = document.getElementsByClassName("FAQ");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("active1");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+            } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        });
+        }
+
+    </script>
+
+    
+</body>
+</html>
