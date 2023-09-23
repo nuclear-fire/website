@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuclear Flame - Software</title>
+    <link rel="icon" href="./icon.png">
+    <link rel="stylesheet" href="globalStyles.css">
+    <style>
+
+        .title{
+            color: white;
+            font-size: 60px;
+            text-align: center;
+            margin: 25px;
+            transition-duration: 0.5s;
+
+        }
+        .title:hover{
+            color: orange;
+            cursor:default;
+        }
+        .bodyText{
+            color: white;
+            font-size: 20px;
+            text-align: center;
+            margin: 25px;
+            transition-duration: 0.5s;
+
+        }
+        .bodyText:hover{
+            color: mediumpurple;
+            cursor:default;
+        }
+        .uiSeperator{
+            height: 2px;
+            width: 80%;
+            background: linear-gradient(to left, orange, mediumpurple);;
+            margin-left: 10%;
+            margin-right: 10%;
+            transition-duration: 0.5s;
+        }
+
+        .terms{
+            color: white;
+            font-size: 20px;
+            text-align: center;
+            margin: 25px;
+            display: block;
+            transition-duration: 0.5s;
+        }
+        .terms:hover{
+            color: mediumpurple;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="menu">
+                <li><a href="https://www.nuclearflame.com" >Home</a></li>
+                <li><a href="https://www.nuclearflame.com/software" class="active">Pricing</a></li>
+                <li><a href="https://www.nuclearflame.com/about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<div id="blob"></div>
+<div id="blur"></div>
+
+<br/><br/><br/><br/><br/><br/><br/><br/>
+<div class="title">Our Software</div>
+<br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/>
+
+<br/><br/><br/><br/>
+<div class="uiSeperator"></div>
+<br/><br/><br/><br/>
+<div class="title ">Delete Items Chrome Plugin</div>
+<a href="" class="terms ">Download on GitHub>></a>
+<br/><br/><br/><br/>
+<div class="uiSeperator"></div>
+
+<br/><br/><br/><br/>
+<div class="title ">Custom Scroll Bar For Chrome</div>
+<a href="" class="terms ">Download on GitHub>></a>
+<br/><br/><br/><br/>
+<div class="uiSeperator"></div>
+
+<br/><br/><br/><br/>
+<div class="title ">More Products Coming Soon</div>
+<br/><br/><br/><br/>
+
+
+
+
+
+    <br/><br/><br/><br/>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Webpages</h3>
+                <ul>
+                    <li><a href="https://www.nuclearflame.com" >Home</a></li>
+                    <li><a href="https://www.nuclearflame.com/software">Pricing</a></li>
+                    <li><a href="https://www.nuclearflame.com/about">About</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Terms and Policies</h3>
+                <ul>
+                    <li><a href="">Privacy Policy</a></li>
+                    <li><a href="">Terms of Service</a></li>
+                    <li><a href="">Cookie Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Social Media</h3>
+                <ul>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="https://github.com/nuclearflame">GitHub</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Youtube</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script>
+        /* -- Glow effect -- */
+
+        const blob = document.getElementById("blob");
+
+        window.onpointermove = event => { 
+        const { clientX, clientY } = event;
+
+        blob.animate({
+            left: `${clientX}px`,
+            top: `${Math.min(clientY + window.scrollY, document.documentElement.scrollHeight+150 - blob.clientHeight)}px`
+        }, { duration: 3000, fill: "forwards" });
+        }
+
+    </script>
+</body>
+</html>
