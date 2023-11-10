@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme Ex Machina - About</title>
+    <style>
+
+        footer{
+            background-color: white;
+        }
+        body {
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+        }
+        .slider-container {
+            width: 100%;
+            height: 25vw;
+            position: relative;
+            white-space: nowrap;
+        }
+        .slider-image {
+            width: 20vw;
+            height: 20vw;
+            display: inline-block;
+            position: absolute;
+            margin: 20px;
+            animation: slide 40s linear infinite;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        @keyframes slide {
+            0% {
+                left:-30%;
+            }
+            100% {
+                left:130%;
+            }
+        }
+        .slider-image:nth-child(1) {
+          animation-delay: -40s; /* No delay for the first child */
+        }
+
+        .slider-image:nth-child(2) {
+          animation-delay: -32s; /* Delay the second child by 0.2 seconds */
+        }
+
+        .slider-image:nth-child(3) {
+          animation-delay: -24s; /* Delay the third child by 0.4 seconds */
+        }
+        .slider-image:nth-child(4) {
+          animation-delay: -16s; /* No delay for the first child */
+        }
+
+        .slider-image:nth-child(5) {
+          animation-delay: -8s; /* Delay the second child by 0.2 seconds */
+        }
+
+        .slider-image:nth-child(6) {
+          animation-delay: 0s; /* Delay the third child by 0.4 seconds */
+        }
+
+
+
+        .slider-image2 {
+            width: 20vw;
+            height: 20vw;
+            display: inline-block;
+            position: absolute;
+            margin: 20px;
+            animation: slide2 40s linear infinite;
+            transition-duration: 0.2s;
+            background-size: contain;
+            background-repeat: no-repeat;
+            }
+
+        @keyframes slide2 {
+            0% {
+                left:130%;
+            }
+            100% {
+                left:-30%;
+            }
+        }
+        .slider-image2:nth-child(1) {
+          animation-delay: -40s; /* No delay for the first child */
+        }
+
+        .slider-image2:nth-child(2) {
+          animation-delay: -32s; /* Delay the second child by 0.2 seconds */
+        }
+
+        .slider-image2:nth-child(3) {
+          animation-delay: -24s; /* Delay the third child by 0.4 seconds */
+        }
+        .slider-image2:nth-child(4) {
+          animation-delay: -16s; /* No delay for the first child */
+        }
+
+        .slider-image2:nth-child(5) {
+          animation-delay: -8s; /* Delay the second child by 0.2 seconds */
+        }
+
+        .slider-image2:nth-child(6) {
+          animation-delay: 0s; /* Delay the third child by 0.4 seconds */
+        }
+        .background{
+            background-image: url("https://cutewallpaper.org/28/computer-wallpaper-moon/101313764.jpg");
+   background-size: cover; /* Adjust as needed */
+  background-repeat: no-repeat; /* Optional */
+  background-attachment: fixed;
+        }
+
+        .title{
+            color: blueviolet;
+            text-align: center;
+            font-size: 100px;
+            font-family: "Libre Baskerville", sans-serif;
+            margin: 20px;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            margin-left: 80px;
+            margin-right: 80px;
+        }
+        .title2{
+            color: cyan;
+            text-align: center;
+            font-size: 30px;
+            font-family: "Libre Baskerville", sans-serif;
+            margin: 20px;
+            margin-left: 80px;
+            margin-right: 80px;
+        }
+        .body{
+            color: mediumpurple;
+            text-align: center;
+            font-size: 20px;
+            font-family: "Roboto", sans-serif;
+            width: 400px;
+            align-self: center;
+            margin: auto;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+        .launch{
+            color: purple;
+            text-align: center;
+            font-size: 30px;
+            font-family: "Libre Baskerville", sans-serif;
+            margin: 20px;
+            margin-left: 80px;
+            margin-right: 80px;
+        }
+        .signUpContainer{
+            margin-top: 50px;
+            margin-bottom: 50px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            justify-content: center;
+        }
+        .signUpText{
+            border: 1px solid black;
+            border-radius: 10px;
+            margin: 10px;
+            height:50px;
+            width: 600px;
+            resize: none;
+            display: inline-block;
+            line-height: 50px;
+            font-size: 18spx;
+            font-family: "Roboto", sans-serif;
+            padding-left: 10px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+            outline: none;
+            min-width: 280px;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        .signUpText:focus{
+            box-shadow: 0px 7.5px 20px rgba(0, 0, 0, 0.3);
+            outline: none;
+        }
+        .signUpButton{
+            margin: 10px;
+            height:50px;
+             width: 200px;
+             background-color: blue;
+            display: inline-block;
+             line-height: 50px;
+            font-size: 30px;
+            font-family: "Roboto", sans-serif;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            transition-duration: 0.2s;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+            min-width: 115px;
+        }
+        .signUpButton:hover{
+            background-color: rgb(30, 104, 252);
+            box-shadow: 0px 7.5px 20px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+        }
+
+        .footer {
+            background-color: white;
+            color: black;
+            padding: 5px 0;
+            text-align: center;
+        }
+
+        /* Container for columns */
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Column styles */
+        .footer-column {
+            flex-basis: calc(30%); /* Adjust column width for mobile */
+            margin-right: 20px;
+        }
+        .xLogo{
+            background-image: url("https://seeklogo.com/images/T/twitter-x-logo-577BCAE525-seeklogo.com.png?v=638264860160000000");
+            height: 40px;
+            width: 40px;
+            background-size: cover;
+            display: inline-block;
+            margin: 10px;
+        }
+        .instagramLogo{
+            background-image: url("https://seeklogo.com/images/I/instagram-logo-A807AD378B-seeklogo.com.png");
+            height: 40px;
+            width: 40px;
+            background-size: contain;
+            display: inline-block;
+            margin: 10px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap">
+</head>
+<body>
+
+    <div class="background">
+        <div class="slider-container">
+            <div class="slider-image" style="background-image: url('https://i.imgflip.com/85j05o.jpg');"></div>
+            <div class="slider-image" style="background-image: url('https://i.imgflip.com/85j0o4.jpg');"></div>
+            <div class="slider-image" style="background-image: url('https://i.imgflip.com/85j0rx.jpg');"></div>
+            <div class="slider-image" style="background-image: url('https://i.imgflip.com/85j0vc.gif');"></div>
+            <div class="slider-image" style="background-image: url('https://i.imgflip.com/85j0y8.jpg');"></div>
+        </div>
+            <div class="slider-container">
+            <div class="slider-image2" style="background-image: url('https://i.imgflip.com/85j12q.jpg');"></div>
+            <div class="slider-image2" style="background-image: url('https://i.imgflip.com/85j16t.jpg');"></div>
+            <div class="slider-image2" style="background-image: url('https://i.imgflip.com/85j18y.jpg');"></div>
+            <div class="slider-image2" style="background-image: url('https://i.imgflip.com/85j1em.gif');"></div>
+            <div class="slider-image2" style="background-image: url('https://i.imgflip.com/85j1ir.jpg');"></div>
+        </div>
+        <div class="title">Meme Ex Machina</div>
+        <div class="title2">Ai Generated Memes</div>
+        <div class="title2">www.MemeExMachina.com</div>
+        <div class="body">Powered By ChatGPT and ImageFlip</div>
+        <div class="launch">Coming Soon...</div>
+
+
+        <br/><br/><br/><br/>
+        <br/><br/><br/><br/>
+
+
+        
+
+    </div>
+
+</body>
+</html>

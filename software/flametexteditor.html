@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flame Text Editor - About</title>
+    <link rel="icon" href="https://www.nuclearflame.com/icon.png">
+<style>
+
+
+::selection {
+    background-color: mediumpurple;
+    color: orange;
+  }
+/* Reset some default styles */
+body {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: black;
+    background-image: url("https://images.pond5.com/futuristic-white-sci-fi-tunnel-footage-089648023_prevstill.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat; /* Optional */
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    width: 100%;
+    background-position: 50% 50%; /* Center the background image */
+
+
+}
+
+/* Style the header and navigation */
+header {
+    padding: 10px 0;
+}
+
+nav {
+    text-align: center;
+}
+
+
+
+  
+    /* Footer styles */
+.footer {
+    background-color: lightgray;
+    border-top: 1px solid black;
+    color: black;
+    padding: 5px 0;
+    text-align: center;
+}
+
+/* Container for columns */
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Column styles */
+.footer-column {
+    flex-basis: calc(33.33% - 20px); /* Adjust column width for mobile */
+    margin-right: 20px;
+}
+
+/* Style for lists */
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .footer-column {
+        flex-basis: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
+
+        .title{
+            color: black;
+            font-size: 60px;
+            text-align: center;
+            margin: 25px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+        }
+        .bodyText{
+            color: black;
+            font-size: 20px;
+            text-align: center;
+            margin: 25px;
+            display: block;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+        }
+        .bodyLink{
+            font-size: 20px;
+            text-align: center;
+            margin: 25px;
+            display: block;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+
+        }
+        .bodyTextUnderlined{
+            color: white;
+            font-size: 20px;
+            text-align: center;
+            margin: 25px;
+            display: block;
+            text-decoration: underline;
+        }
+        .uiSeperator{
+            margin-top: 100px;
+            margin-bottom: 50px;
+            height: 2px;
+            width: 80%;
+            background: linear-gradient(to left, orange, mediumpurple);;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+        a {
+        text-decoration: none;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            margin-top: -71px;
+            z-index: -1;
+            position: relative;
+        }
+
+        .square {
+            background-size: cover;
+            background-image: url("https://cdn.pixabay.com/photo/2016/03/27/18/54/technology-1283624_1280.jpg");
+            margin: auto;
+            width: 80%;
+            height: 500px;
+            overflow: hidden;
+            border-radius: 20px;
+        }
+        .squareFrame{
+            height: 100%;
+            width: 100%;
+        }
+
+        .fade-in-text {
+            opacity: 0;
+            transition: opacity 2s;
+
+        }
+
+        /* Style when the text should fade in */
+        .fade-in {
+            opacity: 1;
+        }
+
+        
+        .fade-in-text-fromleft{
+            opacity: 0;
+            transition: opacity 3s;
+            transform: translateX(100%);
+            filter: blur(5px);
+
+        }
+
+        @media screen and (max-width: 767px) {
+            .fade-in-text-fromleft {
+                transform: translateX(0%);
+
+            }
+        }
+
+
+
+
+        /* Style when the text should fade in */
+        .fade-in-fromleft{
+            opacity: 1;
+            filter: blur(0px);
+            transform: translateX(0%);
+            transition: 1s;
+        }
+
+        .fade-in-text-fromright{
+            opacity: 0;
+            transition: opacity 3s;
+            transform: translateX(-100%);
+            filter: blur(5px);
+
+        }
+
+        /* Style when the text should fade in */
+        .fade-in-fromright{
+            opacity: 1;
+            filter: blur(0px);
+            transform: translateX(0%);
+            transition: 1s;
+        }
+
+
+
+
+
+    </style>
+</head>
+<body style="overflow-x: hidden;" id="body">
+    
+
+
+    <br/><br/><br/><br/>
+
+    <div class="fade-in-text title">
+        <p>🔥 Flame Text Editor 🔥</p>
+    </div>
+
+    <div class="bodyText fade-in-text-fromright">Create and collaborate on online code files, using our real time collaborative code editor</div>
+
+    <br/><br/>
+
+    <div class="bodyText">Comming Soon...</div>
+
+    <br/><br/>
+
+    <div class="container">
+        <div class="square" id="foldableSquare">
+            <div class="squareFrame"></div>
+        </div>
+    </div>
+    
+  
+    <div class="uiSeperator"></div>
+    <div class="title fade-in-text-fromright">Collaborate Together</div>
+    <div class="bodyText fade-in-text-fromleft">Work together with friends on the same document at the same time. Easily share your work with others and talk about it too. It helps you do your projects better and faster!</div>
+
+    <div class="uiSeperator"></div>
+    <div class="title fade-in-text-fromright">Supports 20+ Languages</div>
+    <div class="bodyText fade-in-text-fromleft">We support a wide variety of languages including: python, C, C++, C#, html, java, javascript, typescript, rust, php, swift, and more!</div>
+
+    <div class="uiSeperator"></div>
+    <div class="title fade-in-text-fromright">Store Your Code in the Cloud</div>
+    <div class="bodyText fade-in-text-fromleft">With our cloud based editor, you can access your code from any device, just sign in start coding from your laptop, destop, or even your phone!</div>
+
+    <div class="uiSeperator"></div>
+    <div class="title fade-in-text-fromright">Other Products</div>
+    <a href="https://www.nuclearflame.com" class="bodyLink fade-in-text-fromleft">www.nuclearflame.com</a>
+  
+
+    <div class="uiSeperator"></div>
+    <div class="title fade-in-text-fromright">Contact Us</div>
+    <div class="bodyText fade-in-text-fromleft">If you have any questions, feel free to send us an email at: hello@nuclearflame.com</div>
+
+
+    <br/><br/><br/><br/>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Webpages</h3>
+                <ul>
+                    <li><a href="https://www.nuclearflame.com">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Editor</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Terms and Policies</h3>
+                <ul>
+                    <li><a href="">Privacy Policy</a></li>
+                    <li><a href="">Terms of Service</a></li>
+                    <li><a href="">Cookie Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Social Media</h3>
+                <ul>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="https://github.com/nuclearflame">GitHub</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Youtube</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script>
+
+        //for zoom in 
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+        var scrollValue = document.documentElement.scrollTop;
+        var background = document.getElementById("body");
+        var newSize = 100 + scrollValue / 20; // Adjust the scroll speed here
+
+        background.style.backgroundSize = newSize + "%";
+        }
+        
+
+        
+        //for foldable square
+        const square = document.getElementById("foldableSquare");
+
+        window.addEventListener("scroll", () => {
+            // Calculate the fold angle based on the scroll position
+            const scrollValue = window.scrollY;
+            const foldAngle = Math.max((-scrollValue / 8), -45); // Limit fold angle to a maximum of 5 degrees
+
+            // Apply the folding effect using CSS transform
+            square.style.transform = `perspective(1000px) rotateX(${foldAngle}deg)`;
+        });
+
+        //for fade in text
+        document.addEventListener("DOMContentLoaded", function () {
+            const textElement = document.querySelector(".fade-in-text");
+
+            // Create an Intersection Observer
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        textElement.classList.add("fade-in");
+                    } else if (entry.intersectionRatio > 0) {
+                        textElement.classList.add("fade-in");
+                    } else {
+                        textElement.classList.remove("fade-in");
+                    }
+                });
+            });
+
+            // Observe the text element
+            observer.observe(textElement);
+        });
+
+
+
+        //note the right and left fade ins are switched
+        //some dumbass coded them didn't know thier lefts from rights
+
+        //for fade in text left
+        document.addEventListener("DOMContentLoaded", function () {
+            // Select all elements with the class "fade-in-text-fromleft"
+            const textElements = document.querySelectorAll(".fade-in-text-fromleft");
+
+            // Create an Intersection Observer for each element
+            textElements.forEach((textElement) => {
+                const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                    textElement.classList.add("fade-in-fromleft");
+                    } else if (entry.intersectionRatio > 0) {
+                    // Element is partially in viewport, you can choose to add the class here
+                    textElement.classList.add("fade-in-fromleft");
+                    } else {
+                    // Element is not in viewport, remove the class to reset the animation
+                    textElement.classList.remove("fade-in-fromleft");
+                    }
+                });
+                });
+
+                // Observe each text element
+                observer.observe(textElement);
+            });
+        });
+
+        //for fade in text right
+        document.addEventListener("DOMContentLoaded", function () {
+            // Select all elements with the class "fade-in-text-fromleft"
+            const textElements2 = document.querySelectorAll(".fade-in-text-fromright");
+
+            // Create an Intersection Observer for each element
+            textElements2.forEach((textElement) => {
+                const observer2 = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                    textElement.classList.add("fade-in-fromright");
+                    } else if (entry.intersectionRatio > 0) {
+                    // Element is partially in viewport, you can choose to add the class here
+                    textElement.classList.add("fade-in-fromright");
+                    } else {
+                    // Element is not in viewport, remove the class to reset the animation
+                    textElement.classList.remove("fade-in-fromright");
+                    }
+                });
+                });
+
+                // Observe each text element
+                observer2.observe(textElement);
+            });
+        });
+
+
+
+
+
+    </script>
+
+    
+</body>
+</html>
